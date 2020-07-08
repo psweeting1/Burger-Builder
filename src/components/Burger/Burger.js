@@ -5,7 +5,7 @@ import BurgerIngredient from './BurgerIngredients/BurgerIngredients'
 const burger = (props) => {
 
     //Keys returns an array which we can now map
-    const transformedIngredients = Object.keys(props.ingredients)
+    let transformedIngredients = Object.keys(props.ingredients)
         //igKey is the key in the map used in the array
         .map(igKey => {
             //Use the spread operator (...)
@@ -14,7 +14,14 @@ const burger = (props) => {
                 .map((_, i) => {
                     return <BurgerIngredient key={igKey + i} type={igKey} />
                 });
-        });
+            })
+                //Flatten the array to only create JSON with values.
+                .reduce((arr, el) => {
+                    return arr.concat(el)
+                }, []);
+    if (transformedIngredients.length === 0) {
+        transformedIngredients = <p>Please start adding some ingredients.</p>
+    }
      return (
           <div className={style.burger}>
                <BurgerIngredient type="bread-top"/>

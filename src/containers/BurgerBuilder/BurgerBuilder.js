@@ -3,13 +3,13 @@ import Aux from '../../hoc/Aux'
 import Burger from '../../components/Burger/Burger'
 class BurgerBuilder extends Component {
 
-    //This is an object, not an array, need to convert this using Object.
+    //This is an object, not an array, need to convert this using Object Mapping to an Array.
     state = {
         ingredients: {
-            salad: 1,
-            bacon: 1,
-            cheese: 2,
-            meat: 2
+            salad: 0,
+            bacon: 0,
+            cheese: 0,
+            meat: 0
         }
     }
 
