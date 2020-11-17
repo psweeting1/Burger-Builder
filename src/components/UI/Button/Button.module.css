@@ -10,6 +10,9 @@
     font-weight: bold;
 }
 
+.wide {
+    width: 100%;
+}
 .button:first-of-type {
     margin-left: 0;
     padding-left: 0;
