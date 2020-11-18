@@ -7,7 +7,9 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 const toolbar = (props) => (
     <header className={styles.toolbar}>
         <div>MENU</div>
-        <Logo/>
+            <div className={styles.menuLogo}>
+                <Logo/>
+            </div>
         <nav>
             <NavigationItems/>
         </nav>
